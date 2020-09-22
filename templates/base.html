@@ -8,13 +8,31 @@
       <meta name="description" content="Bawa Iron And Cement Store - Good quality building material is available here ">
       <meta name="author" content="">
       {% endblock %}
+
+      {% block google_tags_head %}
+         <!-- Google Tag Manager -->
+         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+         })(window,document,'script','dataLayer','GTM-NZN4N26');</script>
+         <!-- End Google Tag Manager -->
+      {% endblock %}
       {% include "partials/basic_metas.html" %}
       {% include "partials/css_cdn.html" %}
       {% include "partials/js_cdn.html" %}
    </head>
    <body {% if request.url in ["/", "/index.html"] %} id="home_page" class="home_page" {% else %} id="inner_page" {% endif %}>
-   {% include "partials/header.html" %}
-   {% include "partials/message.html" %}
+
+      {% block google_tags_head %}
+         <!-- Google Tag Manager (noscript) -->
+         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZN4N26"
+         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+         <!-- End Google Tag Manager (noscript) -->
+      {% endblock %}
+
+      {% include "partials/header.html" %}
+      {% include "partials/message.html" %}
 
         {% block container %}
         {% endblock %}
