@@ -9,7 +9,7 @@
       <meta name="author" content="">
       {% endblock %}
 
-      {% block google_tags_head %}
+
          <!-- Google Tag Manager -->
          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,10 +24,11 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-175556091-1');
+        {% block google_tags_head %}
+        {% endblock %}
       </script>
-      {% endblock %}
+
 
       {% include "partials/basic_metas.html" %}
       {% include "partials/css_cdn.html" %}
@@ -35,12 +36,11 @@
    </head>
    <body {% if request.url in ["/", "/index.html"] %} id="home_page" class="home_page" {% else %} id="inner_page" {% endif %}>
 
-      {% block google_tags_body %}
+
          <!-- Google Tag Manager (noscript) -->
          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZN4N26"
          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <!-- End Google Tag Manager (noscript) -->
-      {% endblock %}
 
       {% include "partials/header.html" %}
       {% include "partials/message.html" %}
