@@ -14,7 +14,7 @@ RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 RUN echo "deb http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list
 
-RUN apt-get update && apt-get -y install supervisor python3-pip virtualenv default-libmysqlclient-dev libffi-dev python-dev libncurses5-dev libncursesw5-dev libpq-dev python3-mysqldb binutils libproj-dev gdal-bin proj-bin redis-server curl libxrender1 libfontconfig libxtst6 xz-utils libssl1.0-dev
+RUN apt-get update && apt-get -y install python3-pip virtualenv python3-mysqldb
 
 RUN mkdir /babairon
 WORKDIR /babairon
