@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh """
                    cd /home/aman/PycharmProjects/babairon
-                   source venv/bin/activate
+                   . venv/bin/activate
                    pip3 install -r requirements.txt
                    """
             }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh """
                    cd /home/aman/PycharmProjects/babairon
-                   source venv/bin/activate
+                   . venv/bin/activate
                    python3 manage.py runserver
                    """
             }
