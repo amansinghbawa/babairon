@@ -32,7 +32,6 @@ pipeline {
                 sh """
                    cd /home/aman/PycharmProjects/babairon
                    . venv/bin/activate
-                   sudo kill -9 $(sudo lsof -t -i:8000)
                    gunicorn main:app
                    """
             }
