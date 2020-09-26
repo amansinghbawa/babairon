@@ -19,8 +19,8 @@ pipeline {
 
         stage ("install Requirements"){
             steps {
-                dir('/home/ubuntu/') {
-                    sh 'pip3 install -r requirements.txt'
+                dir('/home/aman/PycharmProjects/babairon') {
+                    sh 'source venv/bin/activate && pip3 install -r requirements.txt'
                 }
                 sh "echo Installed Requirements"
             }
@@ -29,7 +29,9 @@ pipeline {
         stage ("Deploy code"){
             steps {
                 sh "echo code deployed"
-                sh "gunicorn babarion:wsgi"
+                 dir('/home/aman/PycharmProjects/babairon') {
+                    sh 'python3 manage.py runserver'
+                }
             }
         }
     }
