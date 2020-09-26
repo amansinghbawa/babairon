@@ -32,7 +32,8 @@ pipeline {
                 sh """
                    cd /home/aman/PycharmProjects/babairon
                    . venv/bin/activate
-                   python3 manage.py runserver
+                   sudo kill -9 $(sudo lsof -t -i:8000)
+                   gunicorn main:app
                    """
             }
         }
