@@ -15,8 +15,6 @@ RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 RUN echo "deb http://security.ubuntu.com/ubuntu bionic-security main" >> /etc/apt/sources.list
 
-RUN apt-get update
-
 RUN mkdir /babairon
 WORKDIR /babairon
 COPY requirements.txt /babairon
