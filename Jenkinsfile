@@ -32,7 +32,6 @@ pipeline {
                 sh """
                    cd /home/aman/PycharmProjects/babairon
                    . venv/bin/activate
-                   gunicorn main:app
                    """
             }
         }
