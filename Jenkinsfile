@@ -6,8 +6,6 @@ def COLOR_MAP = [
 pipeline {
     agent {label 'master'}
     environment{
-        IMAGE_NAME = "spinnydocker/spinny-web"
-        DOCKER_CREDS = 'docker-credentials'
         IMAGE_TAG = 'dev'
     }
     stages {
