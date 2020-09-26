@@ -10,27 +10,26 @@ pipeline {
     }
     stages {
 
-        stage ("Create build output"){
-            steps {
-                sh "echo build success!"
-            }
-        }
-
         stage ("Pull code"){
             steps {
+                checkout scm
                  sh "echo code pulled"
             }
         }
 
-        stage ("Push code"){
+        stage ("install Requirements"){
             steps {
-                sh "echo code pushed"
+                dir('/home/ubuntu/') {
+                    sh 'pip3 install -r requirements.txt'
+                }
+                sh "echo Installed Requirements"
             }
         }
 
         stage ("Deploy code"){
             steps {
                 sh "echo code deployed"
+                sh "gunicorn babarion:wsgi"
             }
         }
     }
