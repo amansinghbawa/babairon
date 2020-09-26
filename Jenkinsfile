@@ -19,19 +19,21 @@ pipeline {
 
         stage ("install Requirements"){
             steps {
-                dir('/home/aman/PycharmProjects/babairon') {
-                    sh 'pip3 install -r requirements.txt'
-                }
-                sh "echo Installed Requirements"
+                sh """
+                   cd /home/aman/PycharmProjects/babairon
+                   source venv/bin/activate
+                   pip3 install -r requirements.txt
+                   """
             }
         }
 
         stage ("Deploy code"){
             steps {
-                sh "echo code deployed"
-                 dir('/home/aman/PycharmProjects/babairon') {
-                    sh 'python3 manage.py runserver'
-                }
+                sh """
+                   cd /home/aman/PycharmProjects/babairon
+                   source venv/bin/activate
+                   python3 manage.py runserver
+                   """
             }
         }
     }
