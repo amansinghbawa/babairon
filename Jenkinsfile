@@ -24,15 +24,15 @@ pipeline {
             }
         }
 
-        stage ("Pull code"){
+        stage ("Push code"){
             steps {
-                sh "echo code pulled"
+                sh "echo code pushed"
             }
         }
 
         stage ("Deploy code"){
             steps {
-                sh "echo code pulled"
+                sh "echo code deployed"
             }
         }
     }
