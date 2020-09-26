@@ -3,4 +3,9 @@ node {
     stage "Create build output"
 
     sh "echo build success!"
+
+    stage "Pull code"
+    sh "echo code pulled"
+
+
 }
