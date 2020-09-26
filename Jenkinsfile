@@ -8,4 +8,10 @@ node {
     sh "echo code pulled"
 
 
+    stage "Install requirements"
+    sh "echo code pulled"
+
+    stage "Deploy code"
+    sh "echo code pulled"
+
 }
