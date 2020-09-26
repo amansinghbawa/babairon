@@ -20,7 +20,6 @@ pipeline {
         stage ("install Requirements"){
             steps {
                 dir('/home/aman/PycharmProjects/babairon') {
-                    sh 'source venv/bin/activate'
                     sh 'pip3 install -r requirements.txt'
                 }
                 sh "echo Installed Requirements"
