@@ -2,5 +2,5 @@
 node {
     stage "Create build output"
 
-    echo "build success!"
+    sh "echo build success!"
 }
