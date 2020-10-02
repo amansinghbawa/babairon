@@ -3,3 +3,8 @@ deploy:
   provider: heroku
   api_key: b48cbcb3-5bfb-4920-ad14-e487bb520dc5
   app: babairon
+install:
+  - pip install -r requirements.txt
+# command to run tests
+script:
+  - pytest
